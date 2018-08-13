@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JoniMop Blog</title>
+  </head>
+  <body>
+    <h1><a href="">JM Blog</a></h1>
+
+      {% for post in posts %}
+        <div>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>Published {{ post.published_date }}</p>
+              <p>{{ post.text|linebreaksbr }}</p>
+       </div>
+      {% endfor %}
+
+  </body>
+</html>
