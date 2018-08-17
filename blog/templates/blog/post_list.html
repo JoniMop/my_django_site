@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>JoniMop Blog</title>
-  </head>
-  <body>
-    <h1><a href="">JM Blog</a></h1>
+{% extends 'blog/base.html' %}
 
+{% block content %}
       {% for post in posts %}
-        <div>
-              <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-              <p>Published {{ post.published_date }}</p>
-              <p>{{ post.text|linebreaksbr }}</p>
-       </div>
-      {% endfor %}
+        <div class="post">
 
-  </body>
-</html>
+          <div class="date">
+            <p>Published: {{post.published_date }}</p>
+          </div>
+        
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+      {% endfor %}
+{% endblock %}
