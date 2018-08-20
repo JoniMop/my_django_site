@@ -7,6 +7,10 @@
         <div class="date">
           {{ posts.published_date }}
         </div>
+
+        {% else %}
+        <a href="{% url 'post_publish' pk=posts.pk %}" class="btn btn-primary">Publish</a>
+
       {% endif %}
 
 
