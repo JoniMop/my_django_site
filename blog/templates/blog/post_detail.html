@@ -24,4 +24,21 @@
       <h1>{{ posts.title }}</h1>
       <p>{{ posts.text|linebreaksbr }}</p>
     </div>
+
+    <hr>
+    <a href="{% url 'add_comment_to_post' pk=posts.pk %}" class="btn btn-primary">Add comment</a>
+    {% for comment in posts.comments.all %}
+      <div class="comment">
+
+        <div class="date">
+          {{ comment.created_date }}
+        </div>
+
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text }}</p>
+      </div>
+
+      {% empty %}
+      <p>No comments yet...</p>
+    {% endfor %}
 {% endblock %}
