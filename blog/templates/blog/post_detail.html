@@ -26,7 +26,7 @@
     </div>
 
     <hr>
-    <a href="{% url 'add_comment_to_post' pk=posts.pk %}" class="btn btn-primary">Add comment</a>
+    <a href="{% url 'add_comment_to_post' pk=posts.pk %}" class="btn btn-secondary">Add comment</a>
     {% for comment in posts.comments.all %}
       <div class="comment">
 
@@ -34,6 +34,7 @@
           {{ comment.created_date }}
         </div>
 
+        <a href="{% url 'comment_remove' pk=comment.pk %}"><i class="fas fa-trash-alt"></i></a>
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.text }}</p>
       </div>

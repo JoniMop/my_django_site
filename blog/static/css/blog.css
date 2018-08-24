@@ -35,7 +35,7 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-.post-form-blog btn-primary {
+.post-form-blog, btn-primary {
   float: right;
 }
 
@@ -44,7 +44,7 @@ h1, h2, h3, h4 {
   float: right;
   font-size: 26pt;
   margin-right: 20px;
-  padding: 20px 20px 20px 40px;
+  padding: 0px 20px 20px 40px;
 }
 
 
